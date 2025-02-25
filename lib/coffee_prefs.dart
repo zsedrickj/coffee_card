@@ -9,7 +9,7 @@ class CoffeePrefs extends StatefulWidget {
 
 class _CoffeePrefsState extends State<CoffeePrefs> {
 
-  int strength = 1;
+  int strength = 2;
   int  sugar = 1;
 
 
@@ -57,7 +57,8 @@ class _CoffeePrefsState extends State<CoffeePrefs> {
         Row(
           children: [
             const Text('Sugar: '),
-            
+            if(sugar == 0)
+              const Text('No Sugar'),
             for(int i = 0; i < sugar; i++)
               Image.asset(
                 'assets/img/sugar_cube.png',
